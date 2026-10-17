@@ -24,4 +24,4 @@ Investigating Windows endpoint telemetry using Sysmon logs and Splunk Enterprise
 
 **Data source:** LetsDefend training dataset. Dataset attribution and scope will be documented in the project.
 
-[View Project 01](./01-windows-sysmon-threat-hunting/)
+[View Project 01](./01-windows-sysmon-threat-hunting/README.md)
