@@ -142,8 +142,6 @@ index=* source="sysmon.json"
 | search Event.System.EventID=1
     Event.EventData.Image="*cmd.exe"
     Event.EventData.ParentImage="*application_form.pdf.exe"
-| table _time Event.EventData.Image Event.EventData.CommandLine Event.EventData.ParentImage Event.EventData.ParentCommandLine Event.EventData.RuleName
-| sort _time
 ```
 
 **Evidence - Figure 5: `cmd.exe` process creation and parent-process relationship.**
