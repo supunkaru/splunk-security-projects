@@ -94,7 +94,7 @@ index=* source="sysmon.json"
 | sort _time
 ```
 
-Sysmon Event ID 1 records process creation. This query focuses on events where the process image matches the suspicious executable and displays the associated user, command line, and parent-process information.
+Sysmon Event ID 1 records process creation. This query focuses on events where the process image matches the suspicious executable and displays the associated user, command line, and parent process information.
 
 These fields help establish the process context and identify relationships that may warrant additional investigation.
 
@@ -134,7 +134,7 @@ The investigation identified a Sysmon Event ID 1 record for `cmd.exe` with these
 
 The parent-process information records the suspicious executable as the parent of `cmd.exe`. This supports the finding that command-shell execution was associated with the executable.
 
-Sysmon Event ID 1 records process creation; it does not record every command typed into an already-running command prompt. Additional telemetry would be required to establish which commands were executed inside the shell.
+Sysmon Event ID 1 records process creation; it does not record every command typed into an already running command prompt. Additional telemetry would be required to establish which commands were executed inside the shell.
 
 ```spl
 index=* source="sysmon.json"
@@ -317,7 +317,7 @@ This investigation is based on the Sysmon telemetry available in the LetsDefend 
 - Sysmon Event ID 11 records file creation and does not prove that a file was downloaded.
 - Sysmon Event ID 13 records a registry value modification and does not independently prove that a firewall rule was enforced.
 - A command line attempting to create an account does not confirm that the operation succeeded.
-- Network connection events alone do not establish command-and-control activity.
+- Network connection events alone do not establish command and control activity.
 - A download URL or causal relationship between events should not be asserted without supporting evidence.
 - Screenshot captions must match the actual images and query results before publication.
 
@@ -342,7 +342,7 @@ This project demonstrates practical experience with:
 
 This project demonstrates how Sysmon telemetry in Splunk can support an investigation into a suspicious Windows executable and related system activity.
 
-The investigation began with an exploratory search and identified `application_form.pdf.exe` as an executable requiring further examination. firewall related telemetry showed a relationship between the executable and `cmd.exe`. Additional searches examined network connections, PowerShell activity, account-related commands, registry modifications, and file origin metadata.
+The investigation began with an exploratory search and identified `application_form.pdf.exe` as an executable requiring further examination. firewall related telemetry showed a relationship between the executable and `cmd.exe`. Additional searches examined network connections, PowerShell activity, account related commands, registry modifications, and file origin metadata.
 
 The investigation reinforces a central principle of threat hunting: suspicious indicators must be validated through evidence and correlation. Accurate documentation should distinguish observed events from assumptions and clearly state what the available telemetry can and cannot prove.
 
